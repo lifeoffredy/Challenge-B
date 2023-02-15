@@ -1,55 +1,43 @@
-# Challenge-
+# ChallengeB
 
-#snare two times
-sample :drum_snare_soft
-sleep 2
-sample :drum_snare_soft
-sleep 2
+# challenge b
+#first sound to stop at the top
+live_loop :fg do
+  16.times do
+    sample :drum_cymbal_closed
+    sleep 0.5
+  end
+  stop
+end
 
-#kick four times
-sample :drum_heavy_kick, amp: 2
-sleep 1
-sample :drum_heavy_kick, amp: 2
-sleep 1
-sample :drum_heavy_kick, amp: 2
-sleep 1
-sample :drum_heavy_kick, amp: 2
-sleep 1
+live_loop :dsa do
+  16.times do
+    sample :drum_heavy_kick, amp: 2
+    sleep 1
+  end
+  stop
+end
 
-#cymbal eight times
-sample :drum_cymbal_closed
-sleep 0.5
-sample :drum_cymbal_closed
-sleep 0.5
-sample :drum_cymbal_closed
-sleep 0.5
-sample :drum_cymbal_closed
-sleep 0.5
-sample :drum_cymbal_closed
-sleep 0.5
-sample :drum_cymbal_closed
-sleep 0.5
-sample :drum_cymbal_closed
-sleep 0.5
-sample :drum_cymbal_closed
-sleep 0.5
+live_loop :s do
+  12.times do
+    sample :drum_snare_soft
+    sleep 2
+  end
+  stop
+end
 
-#ALL TOGETHER NOW
-sample :drum_splash_hard, sustain: 3
-sample :drum_cymbal_hard
-sample :drum_cowbell, amp: 1.5
-#But also play the snare, kick, and cymbal together
-live_loop :soft do
-  sample :drum_snare_soft
+#live_loop :sk do
+4.times do
+  sample :drum_splash_hard, sustain: 3
   sleep 2
 end
-
-live_loop :heavy do
-  sample :drum_heavy_kick, amp: 2
-  sleep 1
+stop
 end
 
-live_loop :closed do
-  sample :drum_cymbal_closed
+#live_loop :sk do
+8.times do
+  sample :drum_cymbal_hard
   sleep 0.5
+end
+stop
 end
